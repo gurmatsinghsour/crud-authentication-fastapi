@@ -1,0 +1,10 @@
+python-multipart
+jinja2
+uvicorn
+bcrypt
+fastapi
+PyJwt
+python-jose
+passlib
+pydantic
+pymongo

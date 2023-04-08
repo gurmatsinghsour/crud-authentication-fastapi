@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to my App</title>
+    <style>
+      body {
+        background-color: #222;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      #form-container {
+        max-width: 500px;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      input[type="submit"],
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      input[type="submit"]:hover,
+      button:hover {
+        background-color: #555;
+      }
+      .error {
+        color: red;
+        margin-bottom: 10px;
+      }
+      #signup-form {
+        display: none;
+      }
+      #toggle-form {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      #signin-btn {
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #signin-btn.active {
+        background-color: #222;
+        color: #fff;
+      }
+      #signup-btn {
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #signup-btn.active {
+        background-color: #222;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CRUD</h1>
+    <div id="form-container">
+      <h2 id="form-header">Sign In</h2>
+      <form id="signin-form" method="POST">
+        <label>Username</label>
+        <input type="text" name="username" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <div id="signin-error" class="error"></div>
+        <input type="submit" value="Sign In">
+      </form>
+      <form id="signup-form" method="POST">
+        <h2>Sign Up</h2>
+        <label>Username</label>
+        <input type="text" name="username" required>
+        <label>Password</label>
+        <input type="password" name="password" required>
+        <div id="signup-error" class="error"></div>
+        <input type="submit" value="Submit">
+      </form>
+      <div id="toggle-form">
+        <button id="signin-btn">Sign In</button>
+        <button id="signup-btn">Sign Up</button>
+        <button onclick="window.open('http://localhost:8800/docs')">Open Docs</button>
+        <a href="/reset"><button>Reset</button></a>
+      </div>
+    </div>
+    <script>
+
+        const signinForm = document.getElementById("signin-form");
+        const signupForm = document.getElementById("signup-form");
+        const signinBtn = document.getElementById("signin-btn");
+        const signupBtn = document.getElementById("signup-btn");
+
+        // show sign in form by default
+        signinForm.style.display = "block";
+        signupForm.style.display = "none";
+        signinBtn.style.backgroundColor = "#fff";
+
+        // toggle between sign in and sign up forms
+        signinBtn.addEventListener("click", function() {
+          signinForm.style.display = "block";
+          signupForm.style.display = "none";
+          signinBtn.style.color = "#fff";
+          signinBtn.style.backgroundColor = "#333";
+          signinBtn.style.borderColor = "#333";
+          signupBtn.style.backgroundColor = "#ddd";
+          signupBtn.style.color = "#333";
+          signupBtn.style.borderColor = "#333";
+        });
+
+
+        signupBtn.addEventListener("click", function() {
+          signinForm.style.display = "none";
+          signupForm.style.display = "block";
+          signinBtn.style.color = "#333";
+          signinBtn.style.backgroundColor = "#ddd";
+          signinBtn.style.borderColor = "#333";
+          signupBtn.style.backgroundColor = "#333";
+          signupBtn.style.color = "#fff";
+          signupBtn.style.borderColor = "#fff";
+        });
+
+      signinForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(signinForm);
+        const username = formData.get("username");
+        const password = formData.get("password");
+    
+        try {
+          const response = await fetch("/signin", {
+            method: "POST",
+            body: new URLSearchParams({
+              username,
+              password,
+            }),
+          });
+          const data = await response.json();
+          alert(data.message);
+          signinForm.reset();
+        } catch (error) {
+          signinError.textContent = error.message;
+        }
+      });
+    
+      signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(signupForm);
+        const username = formData.get("username");
+        const password = formData.get("password");
+    
+        try {
+          const response = await fetch("/signup", {
+            method: "POST",
+            body: new URLSearchParams({
+              username,
+              password,
+            }),
+          });
+          const data = await response.json();
+          alert(data.message);
+          signupForm.reset();
+        } catch (error) {
+          signupError.textContent = error.message;
+        }
+      });
+    </script>
+</body>
+</html>
+    
