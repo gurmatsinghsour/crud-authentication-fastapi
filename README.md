@@ -11,10 +11,10 @@ MongoDB (version 4.4 or higher)
 
 # Installation
 
-> Clone this repository using the command git clone https://github.com/gurmatsinghsour/API-.
-> Navigate to the project directory using the command **cd API-**.
-> Install the required dependencies using the command **pip install -r requirements.txt**.
-> Create a .env file in the root directory of the project, and add the following environment variables with your own values
+1. Clone this repository using the command git clone https://github.com/gurmatsinghsour/API-.
+2. Navigate to the project directory using the command **cd API-**.
+3. Install the required dependencies using the command **pip install -r requirements.txt**.
+4. Create a .env file in the root directory of the project, and add the following environment variables with your own values
 
 ```
 PORT=3000
