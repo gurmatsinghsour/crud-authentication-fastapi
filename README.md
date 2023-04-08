@@ -29,7 +29,7 @@ Start the application by executing the main.py file.
 
 The following endpoints are available:
 
-## **GET /users**
+### **GET /users**
 This endpoint returns a list of all users.
 
 Response
@@ -54,11 +54,11 @@ Content-Type: application/json
     }
 ]
 ```
-## **POST /users**
+### **POST /users**
 
 This endpoint creates a new user.
 
-Request
+**Request**
 
 
 ```
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 ```
 
-Response
+**Response**
 
 ```
 
@@ -88,7 +88,7 @@ Content-Type: application/json
 }
 
 ```
-GET /users/:id
+### **GET /users/:id**
 This endpoint returns a single user by ID.
 
 Response
