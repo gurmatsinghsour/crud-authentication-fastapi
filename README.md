@@ -31,7 +31,7 @@ Execute the following command:
 python main.py
 ```
 
-Note: you can replace mongodb://localhost:27017/users with the URL of your MongoDB server.
+Note: you can replace **mongodb://localhost:27017/users** with the URL of your MongoDB server.
 
 Start the application by executing the main.py file.
 
