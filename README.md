@@ -25,7 +25,7 @@ To start the API server, run the following command in the project directory:
 uvicorn main:app --reload
 ```
 The **--reload** flag enables auto-reloading of the application when changes are made to the code.
-<br> OR <br>
+<br><br> OR <br><br>
 Execute the following command:
 ```
 python main.py
