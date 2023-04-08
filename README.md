@@ -145,3 +145,6 @@ FastAPI is a modern, fast (high-performance), web framework for building APIs wi
 FastAPI uses the OpenAPI standard (formerly known as Swagger) to provide a well-documented API that can be easily consumed by other applications. It also provides automatic data validation and serialization, making it easier to build reliable and robust APIs.
 
 In this project, FastAPI is used to define and implement the API endpoints, as well as handle authentication and data storage using MongoDB.
+
+# Contribution
+Contributions are welcome! If you find a bug or have a feature request, please create an issue on the repository. If you would like to contribute code, please fork the repository and submit a pull request.
