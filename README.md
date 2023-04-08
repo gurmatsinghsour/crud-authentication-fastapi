@@ -130,13 +130,13 @@ To perform CRUD (Create, Read, Update, Delete) operations on the /users and /pos
 
 # Sign-in, Sign-up, and Reset Password
 
-The API supports user authentication through sign-in, sign-up, and reset password functions. Users can sign up for a new account by providing their email address and password. The API stores the password in a hashed format using the bcrypt library, which is a one-way cryptographic hash function.
+The API supports user authentication through sign-in, sign-up, and reset password functions. Users can sign up for a new account by providing their username and password. The API stores the password in a hashed format using the bcrypt library, which is a one-way cryptographic hash function.
 
 Upon successful registration, the API returns an authentication token that the user can use to access protected endpoints.
 
-To sign in to an existing account, the user must provide their email address and password. The API verifies the provided password by hashing it using bcrypt and comparing it to the stored hashed password. If the credentials are valid, the API returns an authentication token that can be used to access protected endpoints.
+To sign in to an existing account, the user must provide their username and password. The API verifies the provided password by hashing it using bcrypt and comparing it to the stored hashed password. If the credentials are valid, the API returns an authentication token that can be used to access protected endpoints.
 
-If a user forgets their password, they can reset it by providing their email address. The API sends an email to the user with a link to reset their password.
+If a user forgets their password, they can reset it by navigating to the reset password link and then providing the required details.
 
 # FastAPI
 
