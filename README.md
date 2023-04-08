@@ -25,7 +25,7 @@ Note: You can replace 3000 with any available port of your choice. Similarly, yo
 
 Start the application by executing the main.py file.
 
-#API Endpoints
+# API Endpoints
 
 The following endpoints are available:
 
