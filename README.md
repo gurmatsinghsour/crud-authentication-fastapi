@@ -15,7 +15,7 @@ This repository contains a RESTful API built using FastAPI, a modern, fast (high
 1. Clone this repository using the following command:
 ```git clone https://github.com/gurmatsinghsour/API-.```
 2. Navigate to the project directory using the command:
-```cd API-```
+```cd fastapi-mongodb-api```
 3. Install the required Python packages using the pip command:
 ```pip install -r requirements.txt```
 
