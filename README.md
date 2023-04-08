@@ -6,9 +6,9 @@ This repository contains a RESTful API built using FastAPI, a modern, fast (high
 
 # Requirements
 
-Python (version 3.10 or higher)
-MongoDB (version 4.4 or higher)
-Pip
+- Python (version 3.10 or higher)
+- MongoDB (version 4.4 or higher)
+- Pip
 
 # Installation
 
