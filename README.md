@@ -4,12 +4,12 @@ This document provides information about the API application and its usage.
 # Introduction
 This API provides a simple RESTful interface for managing user data. It allows creating, reading, updating, and deleting users.
 
-#Requirements
+# Requirements
 
 Python (version 3.10 or higher)
 MongoDB (version 4.4 or higher)
 
-#Installation
+# Installation
 
 Clone this repository using the command git clone https://github.com/gurmatsinghsour/API-.
 Navigate to the project directory using the command **cd API-**.
@@ -34,8 +34,6 @@ This endpoint returns a list of all users.
 
 Response
 ```
-css
-Copy code
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -62,9 +60,8 @@ This endpoint creates a new user.
 
 Request
 
-bash
+
 ```
-Copy code
 POST /users
 Content-Type: application/json
 
@@ -76,9 +73,9 @@ Content-Type: application/json
 ```
 
 Response
-css
+
 ```
-Copy code
+
 HTTP/1.1 201 Created
 Content-Type: application/json
 
@@ -95,7 +92,7 @@ GET /users/:id
 This endpoint returns a single user by ID.
 
 Response
-css
+
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -114,6 +111,6 @@ Content-Type: application/json
 This endpoint updates a user by ID.
 
 Request
-bash
+
 
 ```PUT /users/611f177e57ee053920c6d1f4```
